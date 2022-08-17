@@ -66,6 +66,10 @@ const useStyles = makeStyles<Theme, StyleProps>((theme) => ({
     alignItems: "center",
     display: (props) => (props.open ? "none" : "flex"),
   },
+  badges: {
+    display: "flex",
+    alignItems: "center",
+  },
   badge: {
     marginRight: theme.spacing(2),
   },
@@ -76,7 +80,7 @@ export function Navbar() {
   const classes = useStyles({ open });
 
   return (
-    <AppBar>
+    <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" className={classes.logoLg}>
           Matan's Project
@@ -96,13 +100,15 @@ export function Navbar() {
             className={classes.searchButton}
             onClick={() => setOpen(true)}
           />
-          <Badge badgeContent={4} color="secondary" className={classes.badge}>
-            <Mail />
-          </Badge>
-          <Badge badgeContent={2} color="secondary" className={classes.badge}>
-            <Notifications />
-          </Badge>
-          <Avatar src="/static/images/avatar/1.jpg" />
+          <div className={classes.badges}>
+            <Badge badgeContent={4} color="secondary" className={classes.badge}>
+              <Mail />
+            </Badge>
+            <Badge badgeContent={2} color="secondary" className={classes.badge}>
+              <Notifications />
+            </Badge>
+            <Avatar src="/static/images/avatar/1.jpg" />
+          </div>
         </div>
       </Toolbar>
     </AppBar>

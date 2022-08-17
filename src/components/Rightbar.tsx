@@ -1,13 +1,17 @@
-import { makeStyles } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  container: {
+    paddingTop: theme.spacing(10),
+  },
+}));
 
 export function Rightbar() {
   const classes = useStyles();
 
   return (
-    <div>
+    <Container className={classes.container}>
       <h2>Rightbar</h2>
-    </div>
+    </Container>
   );
 }
