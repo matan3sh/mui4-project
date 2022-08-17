@@ -1,16 +1,13 @@
 import { makeStyles } from "@material-ui/core";
-import { Navbar } from "./components/Navbar";
 
 const useStyles = makeStyles((theme) => ({}));
 
-function App() {
+export function Feed() {
   const classes = useStyles();
 
   return (
     <div>
-      <Navbar />
+      <h2>Feed</h2>
     </div>
   );
 }
-
-export default App;
