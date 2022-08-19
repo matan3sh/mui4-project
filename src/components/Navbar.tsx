@@ -76,7 +76,7 @@ const useStyles = makeStyles<Theme, StyleProps>((theme) => ({
 }));
 
 export function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const classes = useStyles({ open });
 
   return (
